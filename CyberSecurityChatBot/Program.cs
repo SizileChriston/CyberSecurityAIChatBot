@@ -15,6 +15,7 @@ namespace CyberSecurityChatBot
     {
         User user = new User();//this is how i extract user data from the filled in data and store it
 
+
         static void Main(string[] args)
         {
 
@@ -246,6 +247,9 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
 
         }
 
+
+
+
         public void cybersecurityquestions()
         {
 
@@ -258,7 +262,32 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
             Console.WriteLine("What IT can i ask you about?:    ");
             user.about = Console.ReadLine();
 
+            while (string.IsNullOrWhiteSpace(user.mood))
+            {
+                Console.Write("Mood cannot be empty");
+                Console.Write("How are you today  " + user.studentName + "  " + user.studentSurname + "?:    ");
+                user.mood = Console.ReadLine();
+            }//validation for mood
+
+            while (string.IsNullOrWhiteSpace(user.purpose))
+            {
+                {
+                    Console.Write("Purpose cannot be empty");
+                    Console.Write("Whats your purpose with me as your cyber securtiy App bot?:    ");
+                    user.purpose = Console.ReadLine();
+                }//validation for purpose
+
+
+            }
+
+            while(string.IsNullOrWhiteSpace(user.about))
+            {
+                Console.Write("About cannot be empty");
+                Console.Write("What IT can i ask you about?:    ");
+                user.about = Console.ReadLine();
+            }//validation for about 
         }
+        
 
 
         public void cyberResponse()
