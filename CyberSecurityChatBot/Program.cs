@@ -37,7 +37,7 @@ namespace CyberSecurityChatBot
 
         public void welcomesound()
         {
-            SoundPlayer player = new SoundPlayer("makhosi.wav");
+            SoundPlayer player = new SoundPlayer("Khosi.wav");
             //record welcomng sound
             //soundplayer is calss used tto play sound
 
@@ -45,6 +45,7 @@ namespace CyberSecurityChatBot
             player.PlaySync();//currently eperiencing an error here
             //had to place my wav file in the debug folder, going to test if it works will comment next
             //if it does
+            //changed the recording and shortened it
 
             //add sound to folder make sure wav format
             //PlayeSync allows Audio to play before ASCII shows
@@ -53,16 +54,47 @@ namespace CyberSecurityChatBot
 
         public void asciilogo()
         {
+            Console.ForegroundColor = ConsoleColor.Blue ;
             Console.WriteLine(@"
               
-                              __  __
-                             |  \/  |  [^_^]
-                             | \  / |  /| |\
-                             | |\/| |   / \
-                             |_|  |_|
+                              
+                               [^_^]
+                               /| |\
+                                / \");
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(@"
+                             
+                     /$$   /$$ /$$                           /$$        /$$$$$$            /$$                                    
+                    | $$  /$$/| $$                          |__/       /$$__  $$          | $$                                    
+                    | $$ /$$/ | $$$$$$$   /$$$$$$   /$$$$$$$ /$$      | $$  \__/ /$$   /$$| $$$$$$$   /$$$$$$   /$$$$$$           
+                    | $$$$$/  | $$__  $$ /$$__  $$ /$$_____/| $$      | $$      | $$  | $$| $$__  $$ /$$__  $$ /$$__  $$          
+                    | $$  $$  | $$  \ $$| $$  \ $$|  $$$$$$ | $$      | $$      | $$  | $$| $$  \ $$| $$$$$$$$| $$  \__/          
+                    | $$\  $$ | $$  | $$| $$  | $$ \____  $$| $$      | $$    $$| $$  | $$| $$  | $$| $$_____/| $$                
+                    | $$ \  $$| $$  | $$|  $$$$$$/ /$$$$$$$/| $$      |  $$$$$$/|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$                
+                    |__/  \__/|__/  |__/ \______/ |_______/ |__/       \______/  \____  $$|_______/  \_______/|__/                
+                                                                                 /$$  | $$                                        
+                                                                                |  $$$$$$/                                        
+                                                                                 \______/                                         
+                      /$$$$$$                                          /$$   /$$                     /$$$$$$$              /$$    
+                     /$$__  $$                                        |__/  | $$                    | $$__  $$            | $$    
+                    | $$  \__/  /$$$$$$   /$$$$$$$ /$$   /$$  /$$$$$$  /$$ /$$$$$$   /$$   /$$      | $$  \ $$  /$$$$$$  /$$$$$$  
+                    |  $$$$$$  /$$__  $$ /$$_____/| $$  | $$ /$$__  $$| $$|_  $$_/  | $$  | $$      | $$$$$$$  /$$__  $$|_  $$_/  
+                     \____  $$| $$$$$$$$| $$      | $$  | $$| $$  \__/| $$  | $$    | $$  | $$      | $$__  $$| $$  \ $$  | $$    
+                     /$$  \ $$| $$_____/| $$      | $$  | $$| $$      | $$  | $$ /$$| $$  | $$      | $$  \ $$| $$  | $$  | $$ /$$
+                    |  $$$$$$/|  $$$$$$$|  $$$$$$$|  $$$$$$/| $$      | $$  |  $$$$/|  $$$$$$$      | $$$$$$$/|  $$$$$$/  |  $$$$/
+                     \______/  \_______/ \_______/ \______/ |__/      |__/   \___/   \____  $$      |_______/  \______/    \___/  
+                                                                                     /$$  | $$                                    
+                                                                                    |  $$$$$$/                                    
+                                                                                     \______/                                     
+                    
+                    ");
+
+
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(@"
 
                      ========================
-                         MAKHOSI CHAT BOT
+                      KHOSI CYBER SECURITY BOT
                      ========================
                        you are now PLUGGED in
                      ========================
@@ -85,7 +117,7 @@ namespace CyberSecurityChatBot
                                                                   //resizing the image to fit console better, also aspect ratio is better now, but still not perfect, gonna try to use a different image and see if it works better
 
 
-            for (int y = 0; y < resized.Height; y++)
+            for (int y = 0; y < resized.Height; y +=2)
             {
                 for (int x = 0; x < resized.Width; x++)
                 {
@@ -103,9 +135,10 @@ namespace CyberSecurityChatBot
                     Console.Write(asiiChar);
 
                 }
-
+                Console.WriteLine();//adds line breaks
 
             }
+            
         }
 
         private void getUserDetails()
@@ -162,11 +195,11 @@ namespace CyberSecurityChatBot
                              |_|  |_|
 
                      ========================
-                         MAKHOSI CHAT BOT
+                     KHOSI CYBER SECURITY BOT
                      ========================
-                       you are now PLUGGED in
+                      you are now PLUGGED in
                      ========================
-                                YESSIRRR
+                            YESSIRRR
                 =================================
                 WELCOME {user.studentName} {user.studentSurname}
                 ID: {user.studentID}
@@ -203,7 +236,7 @@ namespace CyberSecurityChatBot
                              |_|  |_|
 
                      ========================
-                         MAKHOSI CHAT BOT
+                     KHOSI CYBER SECURITY BOT
                      ========================
                        SO.........
                         {user.studentName} i noticed that today youre in a {user.mood} mood
