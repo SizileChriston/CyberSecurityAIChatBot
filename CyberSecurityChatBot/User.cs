@@ -1,7 +1,7 @@
 ﻿namespace CyberSecurityChatBot
 {
     internal class User
-    {}
+    {
     
             public string studentName { get; set; }
             public string studentSurname { get; set; }

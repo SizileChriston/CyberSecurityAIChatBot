@@ -5,6 +5,7 @@ using System.Media;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;// added this to contribut ein aiding with bitmap and image manipulation for the ascii image
 
 namespace CyberSecurityChatBot
 {
@@ -40,7 +41,7 @@ namespace CyberSecurityChatBot
             //soundplayer is calss used tto play sound
 
             // execute sound
-            player.PlaySync();
+            player.PlaySync();//currently eperiencing an error here
             //add sound to folder make sure wav format
             //PlayeSync allows Audio to play before ASCII shows
 
