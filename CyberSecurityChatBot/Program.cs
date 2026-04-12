@@ -42,6 +42,9 @@ namespace CyberSecurityChatBot
 
             // execute sound
             player.PlaySync();//currently eperiencing an error here
+            //had to place my wav file in the debug folder, going to test if it works will comment next
+            //if it does
+
             //add sound to folder make sure wav format
             //PlayeSync allows Audio to play before ASCII shows
 
