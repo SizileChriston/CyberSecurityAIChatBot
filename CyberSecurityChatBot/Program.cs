@@ -25,8 +25,9 @@ namespace CyberSecurityChatBot
             obj.asciilogo();//this will end up showing both manual and image ascii, so the logo and image
             obj.getUserDetails();
             obj.wellcomeUser();
-            obj.cybersecurityquestions();
-            obj.cyberResponse();
+            //obj.cybersecurityquestions();
+            //obj.cyberResponse();
+            obj.startchat();
 
 
 
@@ -63,33 +64,6 @@ namespace CyberSecurityChatBot
                                                                        /| |\
                                                                         / \");
             Console.ForegroundColor = ConsoleColor.Red;
-
-            //Console.WriteLine(@"
-
-            //         /$$   /$$ /$$                           /$$        /$$$$$$            /$$                                    
-            //        | $$  /$$/| $$                          |__/       /$$__  $$          | $$                                    
-            //        | $$ /$$/ | $$$$$$$   /$$$$$$   /$$$$$$$ /$$      | $$  \__/ /$$   /$$| $$$$$$$   /$$$$$$   /$$$$$$           
-            //        | $$$$$/  | $$__  $$ /$$__  $$ /$$_____/| $$      | $$      | $$  | $$| $$__  $$ /$$__  $$ /$$__  $$          
-            //        | $$  $$  | $$  \ $$| $$  \ $$|  $$$$$$ | $$      | $$      | $$  | $$| $$  \ $$| $$$$$$$$| $$  \__/          
-            //        | $$\  $$ | $$  | $$| $$  | $$ \____  $$| $$      | $$    $$| $$  | $$| $$  | $$| $$_____/| $$                
-            //        | $$ \  $$| $$  | $$|  $$$$$$/ /$$$$$$$/| $$      |  $$$$$$/|  $$$$$$$| $$$$$$$/|  $$$$$$$| $$                
-            //        |__/  \__/|__/  |__/ \______/ |_______/ |__/       \______/  \____  $$|_______/  \_______/|__/                
-            //                                                                     /$$  | $$                                        
-            //                                                                    |  $$$$$$/                                        
-            //                                                                     \______/                                         
-            //          /$$$$$$                                          /$$   /$$                     /$$$$$$$              /$$    
-            //         /$$__  $$                                        |__/  | $$                    | $$__  $$            | $$    
-            //        | $$  \__/  /$$$$$$   /$$$$$$$ /$$   /$$  /$$$$$$  /$$ /$$$$$$   /$$   /$$      | $$  \ $$  /$$$$$$  /$$$$$$  
-            //        |  $$$$$$  /$$__  $$ /$$_____/| $$  | $$ /$$__  $$| $$|_  $$_/  | $$  | $$      | $$$$$$$  /$$__  $$|_  $$_/  
-            //         \____  $$| $$$$$$$$| $$      | $$  | $$| $$  \__/| $$  | $$    | $$  | $$      | $$__  $$| $$  \ $$  | $$    
-            //         /$$  \ $$| $$_____/| $$      | $$  | $$| $$      | $$  | $$ /$$| $$  | $$      | $$  \ $$| $$  | $$  | $$ /$$
-            //        |  $$$$$$/|  $$$$$$$|  $$$$$$$|  $$$$$$/| $$      | $$  |  $$$$/|  $$$$$$$      | $$$$$$$/|  $$$$$$/  |  $$$$/
-            //         \______/  \_______/ \_______/ \______/ |__/      |__/   \___/   \____  $$      |_______/  \______/    \___/  
-            //                                                                         /$$  | $$                                    
-            //                                                                        |  $$$$$$/                                    
-            //                                                                         \______/                                     
-
-            //        ");
 
             Console.Write(@"
 
@@ -134,51 +108,6 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
             //asci();//get this ammended image doesnt display as well as sound
             //removing te png that i wanted to dsplay would ratgher dplay an asci image
         }
-
-        //private void asci()
-        //{
-        //    Console.WriteLine("\nLoading Visual Logo");
-        //    string path = "3pplug.png";//this is where i will put the image file directory
-        //    //string path = "\"C:\\Users\\Steeze\\OneDrive\\Documents\\School Rosebank\\2026\\Programming 2A\\helloworld\\New folder\\POEChatBot\\POEChatBot\\3pplug.png\"";
-        //    int consoleWidth = Console.WindowWidth;//this will help with resizing the image to fit the console better, also aspect ratio is better now, but still not perfect, gonna try to use a different image and see if it works better
-        //    int consoleHeight = Console.WindowHeight;
-
-        //    int newWidth = consoleWidth/2;
-        //    int newHeight = consoleHeight/3;  
-
-        //    Bitmap image = new Bitmap(path);//the image was located in the wrong path , relocated it and placed it in the debug bin
-        //                                    //program runs without any errors, but imiage doesnt display properly
-        //    Bitmap resized = new Bitmap(image, new Size(newWidth, newHeight));//changed 50 to 30 for better aspect ratio
-        //                                                          //resizing the image to fit console better, also aspect ratio is better now, but still not perfect, gonna try to use a different image and see if it works better
-
-
-        //    for (int y = 0; y < resized.Height; y +=2)
-        //    {
-
-        //        int padding = (consoleWidth - newWidth) / 2;//this will centre my logo
-        //        Console.Write(new string(' ', padding));
-
-        //        for (int x = 0; x < resized.Width; x++)
-        //        {
-        //            Color pixel = resized.GetPixel(x, y);
-
-        //            int gray = (int)(0.3*pixel.R + 0.59*pixel.G + 0.11*pixel.B) / 3;//image wasnt  being generated properly
-        //                                                                            //gonna use better grey scaling
-
-        //            string chars = "@#W$9876543210?!abc;:+=-,._ ";//this will provide more levels
-        //                                                          // and more darkness 
-        //                                                          //still bhaving issues wth dspalying 
-
-        //            char asiiChar = chars[gray * chars.Length / 256];
-
-        //            Console.Write(asiiChar);
-
-        //        }
-        //        Console.WriteLine();//adds line breaks
-
-        //    }
-            
-        //}
 
         private void getUserDetails()
         {
@@ -247,75 +176,92 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
 
         }
 
-
-
-
-        public void cybersecurityquestions()
+        
+        public string getresponses(string input)
         {
+            input = input.ToLower();
 
-            Console.WriteLine($"How are you today  " + user.studentName + "  " + user.studentSurname + "?:    ");
-            user.mood = Console.ReadLine();
-
-            Console.WriteLine("Whats your purpose with me as your cyber securtiy App bot?:    ");
-            user.purpose = Console.ReadLine();
-
-            Console.WriteLine("What IT can i ask you about?:    ");
-            user.about = Console.ReadLine();
-
-            while (string.IsNullOrWhiteSpace(user.mood))
+            if (input.Contains("hello") || input.Contains("hi") || input.Contains("hey") || input.Contains("greetings") || input.Contains("what's up") || input.Contains("yo"))
             {
-                Console.Write("Mood cannot be empty");
-                Console.Write("How are you today  " + user.studentName + "  " + user.studentSurname + "?:    ");
-                user.mood = Console.ReadLine();
-            }//validation for mood
-
-            while (string.IsNullOrWhiteSpace(user.purpose))
+                return $"Hello! {user.studentName} {user.studentSurname}. How can I assist you with cybersecurity today?";
+            }
+            else if (input.Contains("what is cybersecurity") || input.Contains("cybersecurity definition") || input.Contains("explain cybersecurity")|| input.Contains("cybersecurity")|| input.Contains("cyber")|| input.Contains("what is cyber security") || input.Contains("cyber security definition") || input.Contains("security"))
             {
+                return "Cybersecurity is the practice of protecting systems, networks, and data from digital attacks.";
+            }
+            else if (input.Contains("how to stay safe online") || input.Contains("tips for online safety") || input.Contains("how to protect myself online")|| input.Contains("online safety") || input.Contains("stay safe online") || input.Contains("safe") || input.Contains("safety")|| input.Contains("tips"))
+            {
+                return "To stay safe online, use strong passwords, enable two-factor authentication, and be cautious of suspicious links.";
+            }
+            else if (input.Contains("what is phishing") || input.Contains("phishing definition") || input.Contains("what is a phishing attack") || input.Contains("phishing")|| input.Contains("phishing scam") || input.Contains("attack"))
+            {
+                return "Phishing is a cyber attack where attackers impersonate legitimate entities to steal sensitive information.";
+               
+            }
+            else if (input.Contains("what is malware") || input.Contains("malware definition") || input.Contains("what is a malware attack"))
+            {
+                return "Malware is malicious software designed to harm or exploit any programmable device, service, or network.";
+            }
+            else if (input.Contains("what is ransomware") || input.Contains("ransomware definition") || input.Contains("what is a ransomware attack"))
+            {
+                return "Ransomware is a type of malware that encrypts a victim's files and demands payment for the decryption key.";
+            }
+            else if (input.Contains("what is a firewall") || input.Contains("firewall definition") || input.Contains("what does a firewall do"))
+            {
+                return "A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies.";
+            }
+            else if (input.Contains("what is encryption") || input.Contains("encryption definition") || input.Contains("how does encryption work"))
+            {
+                return "Encryption is the process of converting information or data into a code, especially to prevent unauthorized access.";
+            }
+            else if (input.Contains("what is a vpn") || input.Contains("vpn definition") || input.Contains("how does a vpn work"))
+            {
+                return "A VPN, or Virtual Private Network, is a service that encrypts your internet connection and hides your IP address to enhance online privacy and security.";
+            }
+            else if (input.Contains("what is two-factor authentication") || input.Contains("2fa definition") || input.Contains("how does two-factor authentication work"))
+            {
+                return "Two-factor authentication (2FA) is a security process in which the user provides two different authentication factors to verify themselves.";
+            }
+            else
+            {
+                return "I'm sorry, I don't have an answer for that. Can you please ask something else related to cybersecurity?";
+            }
+
+
+
+
+
+
+        }
+
+        public void startchat()
+        {
+            Console.WriteLine($"{user.studentName}, you can now ask me any cybersecurity-related questions. I'm here to help!");
+            Console.WriteLine("\nType 'exit' to end the chat.");
+            while (true)
+            {//this is he uesers chat loop, where they can ask questions and get responses, also has an exit condition to end the chat
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write($"{user.studentName}:  ");
+                string input = Console.ReadLine();
+
+                if (input.ToLower() == "exit")
                 {
-                    Console.Write("Purpose cannot be empty");
-                    Console.Write("Whats your purpose with me as your cyber securtiy App bot?:    ");
-                    user.purpose = Console.ReadLine();
-                }//validation for purpose
+                    Console.WriteLine("Goodbye! Adios Amigo");
+                    break;
+                }
+
+                string response = getresponses(input);
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine($"Khosi Bot: {response}");
+
+
+
+
 
 
             }
-
-            while(string.IsNullOrWhiteSpace(user.about))
-            {
-                Console.Write("About cannot be empty");
-                Console.Write("What IT can i ask you about?:    ");
-                user.about = Console.ReadLine();
-            }//validation for about 
         }
-        
 
-
-        public void cyberResponse()
-        {
-
-            Console.Write($@"
-        
-              
-                              __  __
-                             |  \/  |  [^_^]
-                             | \  / |  /| |\
-                             | |\/| |   / \
-                             |_|  |_|
-
-                     ========================
-                     KHOSI CYBER SECURITY BOT
-                     ========================
-                       SO.........
-                        {user.studentName} i noticed that today youre in a {user.mood} mood
-                        your purpose with me as your bot is {user.purpose}, which isnt a bad idea, i apreciate the interest
-                        and 
-                        this is what info youd lke to disclose about yourself:  {user.about}
-
-                        
-                                ");
-
-
-        }
 
     }
 }
