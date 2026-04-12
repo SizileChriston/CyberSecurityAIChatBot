@@ -5,7 +5,8 @@ using System.Media;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
-using System.Drawing;// added this to contribut ein aiding with bitmap and image manipulation for the ascii image
+using System.Drawing;
+using System.Threading;// added this to contribut ein aiding with bitmap and image manipulation for the ascii image
 
 namespace CyberSecurityChatBot
 {
@@ -78,8 +79,11 @@ namespace CyberSecurityChatBot
             string path = "3pplug.png";//this is where i will put the image file directory
             //string path = "\"C:\\Users\\Steeze\\OneDrive\\Documents\\School Rosebank\\2026\\Programming 2A\\helloworld\\New folder\\POEChatBot\\POEChatBot\\3pplug.png\"";
 
-            Bitmap image = new Bitmap(path);
-            Bitmap resized = new Bitmap(image, new Size(100, 50));
+            Bitmap image = new Bitmap(path);//the image was located in the wrong path , relocated it and placed it in the debug bin
+                                            //program runs without any errors, but imiage doesnt display properly
+            Bitmap resized = new Bitmap(image, new Size(100, 30));//changed 50 to 30 for better aspect ratio
+                                                                  //resizing the image to fit console better, also aspect ratio is better now, but still not perfect, gonna try to use a different image and see if it works better
+
 
             for (int y = 0; y < resized.Height; y++)
             {
@@ -87,9 +91,12 @@ namespace CyberSecurityChatBot
                 {
                     Color pixel = resized.GetPixel(x, y);
 
-                    int gray = (pixel.R + pixel.G + pixel.B) / 3;
+                    int gray = (int)(0.3*pixel.R + 0.59*pixel.G + 0.11*pixel.B) / 3;//image wasnt  being generated properly
+                                                                                    //gonna use better grey scaling
 
-                    string chars = "@#s%?*+;:,. ";
+                    string chars = "@#W$9876543210?!abc;:+=-,._ ";//this will provide more levels
+                                                                  // and more darkness 
+                                                                  //still bhaving issues wth dspalying 
 
                     char asiiChar = chars[gray * chars.Length / 256];
 
