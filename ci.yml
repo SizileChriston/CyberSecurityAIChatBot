@@ -18,4 +18,4 @@ jobs:
       run: nuget restore
 
     - name: Build project
-      run: msbuild CyberSecurityChatBot.sln
+      run: msbuild CyberSecurityChatBot.slnx
