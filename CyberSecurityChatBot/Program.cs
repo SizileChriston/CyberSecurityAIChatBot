@@ -10,7 +10,7 @@ using System.Threading;// added this to contribut ein aiding with bitmap and ima
 
 namespace CyberSecurityChatBot
 {
-    
+
     internal class Program
     {
         User user = new User();//this is how i extract user data from the filled in data and store it
@@ -49,7 +49,7 @@ namespace CyberSecurityChatBot
 
         public void asciilogo()
         {
-           
+
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.Write(@"
@@ -105,15 +105,19 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
         }//done to create borders and simulate a more interactive console experience
         private void getUserDetails()
         {
-
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Personal Details: \n");
             //User user = new User();
             drawline();
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("Enter your Name:    ");
             user.studentName = Console.ReadLine();
-            
+
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("Enter your Surname:    ");
             user.studentSurname = Console.ReadLine();
-            
+
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.Write("Enter your Student Number:  ");
             user.studentID = Console.ReadLine();
             drawline();
@@ -123,23 +127,23 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
                 Console.Write("Nmaer cannot be empty");
                 Console.Write("Enter your name:    ");
                 user.studentName = Console.ReadLine();
-                                drawline();
+                drawline();
             }
-            while (string.IsNullOrEmpty(user.studentSurname))
+            while (string.IsNullOrWhiteSpace(user.studentSurname))
             {
                 Console.Write("Student Surname cannot be empty");
                 Console.Write("Enter your Surname:    ");
                 user.studentSurname = Console.ReadLine();
-                    drawline();
+                drawline();
             }
 
-            while (string.IsNullOrEmpty(user.studentID))//could use while statement for all if statements
+            while (string.IsNullOrWhiteSpace(user.studentID))//could use while statement for all if statements
             {
 
                 Console.Write("");
                 Console.Write("Enter your Student Number:    ");
                 user.studentID = Console.ReadLine();
-                drawline(); 
+                drawline();
             }
 
 
@@ -172,31 +176,33 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
 
         }
 
-        
+
         public string getresponses(string input)
         {
+
             input = input.ToLower();
+
 
             if (input.Contains("hello") || input.Contains("hi") || input.Contains("hey") || input.Contains("greetings") || input.Contains("what's up") || input.Contains("yo"))
             {
                 return $"Hello! {user.studentName} {user.studentSurname}. How can I assist you with cybersecurity today?";
             }
-            else if (input.Contains("how are you") || input.Contains("how are you doing") || input.Contains("how's it going") || input.Contains("how do you feel") || input.Contains("what's up with you") || input.Contains("how are you feeling")|| input.Contains("hud")|| input.Contains("wassup"))
+            else if (input.Contains("how are you") || input.Contains("how are you doing") || input.Contains("how's it going") || input.Contains("how do you feel") || input.Contains("what's up with you") || input.Contains("how are you feeling") || input.Contains("hud") || input.Contains("wassup"))
             {
                 return "I'm just a bot, for you my G i will always be fantatsic. lets get back to whats important, as I'm here to help you with all your cybersecurity questions!";
             }
-            else if (input.Contains("what is cybersecurity") || input.Contains("cybersecurity definition") || input.Contains("explain cybersecurity")|| input.Contains("cybersecurity")|| input.Contains("cyber")|| input.Contains("what is cyber security") || input.Contains("cyber security definition") || input.Contains("security"))
+            else if (input.Contains("what is cybersecurity") || input.Contains("cybersecurity definition") || input.Contains("explain cybersecurity") || input.Contains("cybersecurity") || input.Contains("cyber") || input.Contains("what is cyber security") || input.Contains("cyber security definition") || input.Contains("security"))
             {
                 return "Cybersecurity is the practice of protecting systems, networks, and data from digital attacks.";
             }
-            else if (input.Contains("how to stay safe online") || input.Contains("tips for online safety") || input.Contains("how to protect myself online")|| input.Contains("online safety") || input.Contains("stay safe online") || input.Contains("safe") || input.Contains("safety")|| input.Contains("tips"))
+            else if (input.Contains("how to stay safe online") || input.Contains("tips for online safety") || input.Contains("how to protect myself online") || input.Contains("online safety") || input.Contains("stay safe online") || input.Contains("safe") || input.Contains("safety") || input.Contains("tips"))
             {
                 return "To stay safe online, use strong passwords, enable two-factor authentication, and be cautious of suspicious links.";
             }
-            else if (input.Contains("what is phishing") || input.Contains("phishing definition") || input.Contains("what is a phishing attack") || input.Contains("phishing")|| input.Contains("phishing scam") || input.Contains("attack"))
+            else if (input.Contains("what is phishing") || input.Contains("phishing definition") || input.Contains("what is a phishing attack") || input.Contains("phishing") || input.Contains("phishing scam") || input.Contains("attack"))
             {
                 return "Phishing is a cyber attack where attackers impersonate legitimate entities to steal sensitive information.";
-               
+
             }
             else if (input.Contains("what is malware") || input.Contains("malware definition") || input.Contains("what is a malware attack"))
             {
@@ -236,6 +242,8 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
 
         public void startchat()
         {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Start AI Chat");
             Console.WriteLine($"{user.studentName}, you can now ask me any cybersecurity-related questions. I'm here to help!");
             Console.WriteLine("\nType 'exit' to end the chat.");
             while (true)
@@ -254,8 +262,9 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
                 string response = getresponses(input);
                 Console.ForegroundColor = ConsoleColor.Blue;
                 drawline();
-                Console.WriteLine($"Khosi Bot: {response}");
-                drawline(); 
+                typetext($"Khosi Bot: {response}"   );
+                
+                drawline();
 
 
 
@@ -265,6 +274,26 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
             }
         }
 
+        public void typetext(string text, int delay = 30)//this is a method to simulate the bot typing out the response, it takes in the text to be displayed and an optional delay parameter to control the speed of the typing effect
+        {
+            Console.Write("bot is typing...");
+            for (int i = 0; i<2; i++)
+            {
+                Thread.Sleep(delay);
+                Console.Write(".");
+                
+            }
 
+            Console.WriteLine();
+            
+            foreach (char c in text)
+                {  
+                Console.Write(c); 
+                Thread.Sleep(delay);
+            }
+
+            Console.WriteLine();
+        }
     }
+
 }
