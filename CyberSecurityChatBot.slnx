@@ -1,3 +1,7 @@
 <Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/workflows/">
+    <File Path="ci.yml" />
+  </Folder>
   <Project Path="CyberSecurityChatBot/CyberSecurityChatBot.csproj" Id="623360a8-72a3-4d1a-aa64-fa97889aee0d" />
 </Solution>
