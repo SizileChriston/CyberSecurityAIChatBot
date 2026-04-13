@@ -50,7 +50,7 @@ namespace CyberSecurityChatBot
         public void asciilogo()
         {
 
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Red;//this is the logo-title
 
             Console.Write(@"
 
@@ -76,13 +76,13 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
                                     ");
 
 
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Blue;//robot-logo
             Console.WriteLine(@"
               
                               
-                            [^_^]
+                            [^_^] 
                             /| |\
-                             / \");
+                             / \");//for aesthetic purposes my image is dispalyed below the title
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(@"
 
@@ -172,7 +172,7 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
                 WELCOME {user.studentName} {user.studentSurname}
                 ID: {user.studentID}
                 =================================
-                ");
+                ");//customised for
 
         }
 
@@ -204,27 +204,27 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
                 return "Phishing is a cyber attack where attackers impersonate legitimate entities to steal sensitive information.";
 
             }
-            else if (input.Contains("what is malware") || input.Contains("malware definition") || input.Contains("what is a malware attack"))
+            else if (input.Contains("what is malware") || input.Contains("malware definition") || input.Contains("what is a malware attack")||input.Contains("malware"))
             {
                 return "Malware is malicious software designed to harm or exploit any programmable device, service, or network.";
             }
-            else if (input.Contains("what is ransomware") || input.Contains("ransomware definition") || input.Contains("what is a ransomware attack"))
+            else if (input.Contains("what is ransomware") || input.Contains("ransomware definition") || input.Contains("what is a ransomware attack")|| input.Contains("ransomware")|| input.Contains("ransomware"))
             {
                 return "Ransomware is a type of malware that encrypts a victim's files and demands payment for the decryption key.";
             }
-            else if (input.Contains("what is a firewall") || input.Contains("firewall definition") || input.Contains("what does a firewall do"))
+            else if (input.Contains("what is a firewall") || input.Contains("firewall definition") || input.Contains("what does a firewall do")||input.Contains("firewall")|| input.Contains("firewall"))
             {
                 return "A firewall is a network security device that monitors and filters incoming and outgoing network traffic based on an organization's previously established security policies.";
             }
-            else if (input.Contains("what is encryption") || input.Contains("encryption definition") || input.Contains("how does encryption work"))
+            else if (input.Contains("what is encryption") || input.Contains("encryption definition") || input.Contains("how does encryption work")|| input.Contains("encryption"))
             {
                 return "Encryption is the process of converting information or data into a code, especially to prevent unauthorized access.";
             }
-            else if (input.Contains("what is a vpn") || input.Contains("vpn definition") || input.Contains("how does a vpn work"))
+            else if (input.Contains("what is a vpn") || input.Contains("vpn definition") || input.Contains("how does a vpn work")|| input.Contains("vpn"))
             {
                 return "A VPN, or Virtual Private Network, is a service that encrypts your internet connection and hides your IP address to enhance online privacy and security.";
             }
-            else if (input.Contains("what is two-factor authentication") || input.Contains("2fa definition") || input.Contains("how does two-factor authentication work"))
+            else if (input.Contains("what is two-factor authentication") || input.Contains("2fa definition") || input.Contains("how does two-factor authentication work")||input.Contains("2fa")||input.Contains("two factor authentication")||input.Contains("two-factor authentication")|| input.Contains("verify"))
             {
                 return "Two-factor authentication (2FA) is a security process in which the user provides two different authentication factors to verify themselves.";
             }
@@ -245,6 +245,8 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Start AI Chat");
             Console.WriteLine($"{user.studentName}, you can now ask me any cybersecurity-related questions. I'm here to help!");
+            Console.WriteLine($"You can look into key topics like: " +
+                              $"\nSecurity\nmalware \n phishing \nprivacy \nauthentiucation \nransomware ");//for user aid and assitance in use the chatbot
             Console.WriteLine("\nType 'exit' to end the chat.");
             while (true)
             {//this is he uesers chat loop, where they can ask questions and get responses, also has an exit condition to end the chat
@@ -252,7 +254,7 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
                 Console.Write($"{user.studentName}:  ");
                 string input = Console.ReadLine();
 
-                if (input.ToLower() == "exit")
+                if (input.ToLower() == "exit" || input.ToLower() == "end")
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Goodbye! Adios Amigo");
