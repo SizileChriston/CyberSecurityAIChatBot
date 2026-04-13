@@ -3,5 +3,8 @@
   <Folder Name="/.github/workflows/">
     <File Path="ci.yml" />
   </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path="../../../../../../../Pictures/Screenshots/Screenshot 2026-04-13 205401.png" />
+  </Folder>
   <Project Path="CyberSecurityChatBot/CyberSecurityChatBot.csproj" Id="623360a8-72a3-4d1a-aa64-fa97889aee0d" />
 </Solution>
