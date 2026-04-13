@@ -28,13 +28,6 @@ namespace CyberSecurityChatBot
             //obj.cybersecurityquestions();
             //obj.cyberResponse();
             obj.startchat();
-
-
-
-
-
-            Console.WriteLine("Hello, World!");
-            Console.ReadLine();
         }
 
         public void welcomesound()
@@ -56,13 +49,7 @@ namespace CyberSecurityChatBot
 
         public void asciilogo()
         {
-            Console.ForegroundColor = ConsoleColor.Blue ;
-            Console.WriteLine(@"
-              
-                              
-                                                                       [^_^]
-                                                                       /| |\
-                                                                        / \");
+           
             Console.ForegroundColor = ConsoleColor.Red;
 
             Console.Write(@"
@@ -80,19 +67,22 @@ Yb        8P   88""""Yb 88""""   88""Yb
 `Ybo."" 88__   dP   `"" 88   88 88__dP 88   88    YbdP      dP   `"" 88  88   dPYb     88   
 o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP__Yb    88   
 8bodP' 888888  YboodP `YbodP' 88  Yb 88   88    dP         YboodP 88  88 dP""""""""Yb   88   
-    88""""Yb  dP""Yb  888888                                                                
-    88__dP dP   Yb   88                                                                  
-    88""""Yb Yb   dP   88                                                                  
-    88oodP  YbodP    88                                                                  
-
-
-
-
+88""""Yb  dP""Yb  888888                                                                
+88__dP dP   Yb   88                                                                  
+88""""Yb Yb   dP   88                                                                  
+88oodP  YbodP    88                                                                  
 
 
                                     ");
 
 
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(@"
+              
+                              
+                            [^_^]
+                            /| |\
+                             / \");
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(@"
 
@@ -109,42 +99,47 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
             //removing te png that i wanted to dsplay would ratgher dplay an asci image
         }
 
-
+        public void drawline()
+        {
+            Console.WriteLine("=========================================================================================================");
+        }//done to create borders and simulate a more interactive console experience
         private void getUserDetails()
         {
 
             //User user = new User();
-
+            drawline();
             Console.Write("Enter your Name:    ");
             user.studentName = Console.ReadLine();
-
+            
             Console.Write("Enter your Surname:    ");
             user.studentSurname = Console.ReadLine();
-
+            
             Console.Write("Enter your Student Number:  ");
             user.studentID = Console.ReadLine();
+            drawline();
 
             while (string.IsNullOrWhiteSpace(user.studentName))
             {
                 Console.Write("Nmaer cannot be empty");
                 Console.Write("Enter your name:    ");
                 user.studentName = Console.ReadLine();
-
+                                drawline();
             }
             while (string.IsNullOrEmpty(user.studentSurname))
             {
                 Console.Write("Student Surname cannot be empty");
                 Console.Write("Enter your Surname:    ");
                 user.studentSurname = Console.ReadLine();
+                    drawline();
             }
 
             while (string.IsNullOrEmpty(user.studentID))//could use while statement for all if statements
             {
 
                 Console.Write("");
-                Console.Write("Enter your Student ID:    ");
+                Console.Write("Enter your Student Number:    ");
                 user.studentID = Console.ReadLine();
-
+                drawline(); 
             }
 
 
@@ -185,6 +180,10 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
             if (input.Contains("hello") || input.Contains("hi") || input.Contains("hey") || input.Contains("greetings") || input.Contains("what's up") || input.Contains("yo"))
             {
                 return $"Hello! {user.studentName} {user.studentSurname}. How can I assist you with cybersecurity today?";
+            }
+            else if (input.Contains("how are you") || input.Contains("how are you doing") || input.Contains("how's it going") || input.Contains("how do you feel") || input.Contains("what's up with you") || input.Contains("how are you feeling")|| input.Contains("hud")|| input.Contains("wassup"))
+            {
+                return "I'm just a bot, for you my G i will always be fantatsic. lets get back to whats important, as I'm here to help you with all your cybersecurity questions!";
             }
             else if (input.Contains("what is cybersecurity") || input.Contains("cybersecurity definition") || input.Contains("explain cybersecurity")|| input.Contains("cybersecurity")|| input.Contains("cyber")|| input.Contains("what is cyber security") || input.Contains("cyber security definition") || input.Contains("security"))
             {
@@ -247,13 +246,16 @@ o.`Y8b 88""""   Yb      Y8   8P 88""Yb  88   88     8P       Yb      888888  dP_
 
                 if (input.ToLower() == "exit")
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Goodbye! Adios Amigo");
                     break;
                 }
 
                 string response = getresponses(input);
                 Console.ForegroundColor = ConsoleColor.Blue;
+                drawline();
                 Console.WriteLine($"Khosi Bot: {response}");
+                drawline(); 
 
 
 
